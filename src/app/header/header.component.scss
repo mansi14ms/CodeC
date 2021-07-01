@@ -1,0 +1,38 @@
+$xs: 0;
+$sm : 576px;
+$md : 768px;
+$lg: 992px;
+$xl: 1200px;
+.container-fluid {
+ background-color : #FF5500;
+ opacity: 0.9;
+ top : 0;
+// width : 100%;
+ line-height: 3rem;
+ font-family: 'Architects Daughter', cursive;
+ position: sticky;
+ overflow: hidden;
+
+ @media screen and (max-width: $sm) {
+  line-height: 2rem;
+}
+@media screen and (max-width: $lg) {
+  line-height: 2rem;
+  width: 100%;
+}
+
+
+}
+
+a {
+  text-decoration: none;
+
+}
+a:hover {
+  background-color: white;
+}
+.pic {
+  top : -10;
+
+
+}

@@ -1,0 +1,56 @@
+ <div class = "bod contanier row">
+   <div class ="row">
+     <div class="col-md-3"></div>
+     <div class="col-md-6">
+   <div class="success" *ngIf = "this.dataService.alertPresent == true">
+    <h4>Registered Successfully!! We'll get back to you with all the details</h4>
+   </div>
+   <div class="fail" *ngIf = "this.dataService.alertAbsent == true">
+    <h4>Error Reaching!! Please retry after sometime</h4>
+   </div>
+  </div>
+   <div class="col-md-3"></div>
+  </div>
+<div class ="form1 col-md-6" id="book">
+<!-- Default form subscription -->
+<form class="text-center "   [formGroup]="profileForm" (ngSubmit)="submitForm()" style="border-right: 3px solid #E7E9EC">
+
+ <div class ="border-style: solid">
+  <h3 style="color: black; font-weight: 1000">Book For Workshop!!</h3>
+  <br>
+  <!-- Name -->
+  <input type="text" id="defaultSubscriptionFormPassword" class="form-control mb-2" placeholder="Name" formControlName="name">
+  <span *ngIf = "!profileForm.get('name')!.valid && profileForm.get('name')!.touched" style="color:orange; font-weight: 1000;">Name Please</span>
+
+  <!-- Email -->
+  <input type="email" id="defaultSubscriptionFormEmail" class="form-control mb-2" placeholder="E-mail" formControlName="mail">
+  <span *ngIf = "!profileForm.get('mail')!.valid && profileForm.get('mail')!.touched" style="color:orange; font-weight: 1000;">Email Please</span>
+
+   <!-- Phone -->
+   <input type="phone" id="defaultSubscriptionFormEmail" class="form-control mb-2" placeholder="Phone(Preferably whatsApp)" formControlName="phone">
+
+   <span *ngIf = "!profileForm.get('phone')!.valid && profileForm.get('phone')!.touched" style="color:orange;font-weight: 1000;">Check your number </span>
+
+   <!-- kids
+   <input type="phone" id="defaultSubscriptionFormEmail" class="form-control mb-2" placeholder="Number of kids attending" formControlName="phone">
+   <span *ngIf = "!profileForm.get('phone')!.valid && profileForm.get('phone')!.touched" style="color:orange;font-weight: 100;">Please specify </span> -->
+
+  <br>
+  <br>
+  <!-- Sign in button -->
+  <button class="btn btn-info btn-block" *ngIf="spinner == false" type="submit" [disabled]="!profileForm.valid" style= "background-color: #FF5500; border-color: #FF5500;width: 40%; ">Book</button>
+  <button class="btn btn-info btn-block" type="submit" *ngIf="spinner == true" style= "background-color: #FF5500; border-color: #FF5500;width: 40%;color:whitesmoke"><div class="d-flex justify-content-center">
+    <div class="spinner-border" role="status">
+        <span class="sr-only" id="loading"></span>
+    </div>
+</div></button>
+</div>
+</form>
+<!-- Default form subscription -->
+
+</div>
+<div class="illus col-md-6">
+  <img src="../../assets/images/tiny.jpg" >
+</div>
+</div>
+
